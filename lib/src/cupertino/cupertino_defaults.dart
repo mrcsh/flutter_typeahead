@@ -20,7 +20,7 @@ abstract final class TypeAheadCupertinoDefaults {
   /// The default error builder used by a CupertinoTypeAheadField.
   /// Displays the error message in [CupertinoColors.destructiveRed].
   static Widget errorBuilder(BuildContext context, Object? error) {
-    String message = 'An error has occured';
+    String message = 'An error has occurred';
     message = 'Error: $error';
     return Padding(
       padding: const EdgeInsets.all(8),
@@ -66,9 +66,8 @@ abstract final class TypeAheadCupertinoDefaults {
           }
           return Container(
             decoration: BoxDecoration(
-              color: highlighted
-                  ? CupertinoColors.systemGrey4.withOpacity(0.5)
-                  : null,
+              color:
+                  highlighted ? CupertinoColors.systemGrey4.withValues(alpha: 0.5) : null,
               borderRadius: const BorderRadius.all(Radius.circular(12)),
             ),
             child: FocusableActionDetector(

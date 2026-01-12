@@ -1,6 +1,4 @@
 import 'package:flutter/widgets.dart';
-import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
-import 'package:flutter_typeahead/src/common/base/connector_widget.dart';
 import 'package:flutter_typeahead/src/common/base/suggestions_controller.dart';
 
 /// Hides the suggestions box when the keyboard is closed.
@@ -18,7 +16,8 @@ class SuggestionsFieldKeyboardConnector<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ConnectorWidget(
+    return child;
+    /* return ConnectorWidget(
       // [KeyboardVisibilityController] is a singleton.
       value: KeyboardVisibilityController(),
       connect: (value) => value.onChange.listen((visible) {
@@ -27,7 +26,6 @@ class SuggestionsFieldKeyboardConnector<T> extends StatelessWidget {
         }
       }),
       disconnect: (value, key) => key?.cancel(),
-      child: child,
-    );
+      child: child,)); */
   }
 }
